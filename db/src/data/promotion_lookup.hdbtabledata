@@ -1,0 +1,23 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "efashion.db.data::PROMOTION_LOOKUP",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "efashion.db.data::promotion_lookup.csv",
+                "has_header": true
+            },
+            "import_settings": {
+				"import_columns": [
+					"PROMOTION_ID",
+					"PROMOTION_FLAG",
+					"PRINT_FLAG",
+					"RADIO_FLAG",
+					"TELEVISION_FLAG",
+					"DIRECT_MAIL_FLAG"
+                ]
+            }
+        }
+    ]
+}

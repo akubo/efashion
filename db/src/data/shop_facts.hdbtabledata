@@ -1,0 +1,27 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "efashion.db.data::SHOP_FACTS",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "efashion.db.data::shop_facts.csv",
+                "has_header": true
+            },
+            "import_settings": {
+				"import_columns": [
+					"SHOP_FACTS_ID",
+					"ARTICLE_ID",
+					"COLOR_CODE",
+					"WEEK_ID",
+					"SHOP_ID",
+					"MARGIN",
+					"AMOUNT_SOLD",
+					"QUANTITY_SOLD",
+					"DATE_TIME",
+					"SALES_DATE"
+                ]
+            }
+        }
+    ]
+}

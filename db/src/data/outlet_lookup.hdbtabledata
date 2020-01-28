@@ -1,0 +1,28 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "efashion.db.data::OUTLET_LOOKUP",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "efashion.db.data::outlet_lookup.csv",
+                "has_header": true
+            },
+            "import_settings": {
+				"import_columns": [
+					"SHOP_ID",
+					"SHOP_NAME",
+					"ADDRESS_1",
+					"MANAGER",
+					"DATE_OPEN",
+					"LONG_OPENING_HOURS_FLAG",
+					"OWNED_OUTRIGHT_FLAG",
+					"FLOOR_SPACE",
+					"ZIP_CODE",
+					"CITY",
+					"STATE"
+                ]
+            }
+        }
+    ]
+}

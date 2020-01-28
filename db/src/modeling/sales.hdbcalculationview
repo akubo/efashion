@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="efashion.db.modeling::sales" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" runWithInvokerPrivileges="false">
+<descriptions defaultDescription="sales"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="efashion.db.data::SHOP_FACTS">
+    <resourceUri>efashion.db.data::SHOP_FACTS</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="SHOP_FACTS_ID"/>
+      <viewAttribute id="ARTICLE_ID"/>
+      <viewAttribute id="COLOR_CODE"/>
+      <viewAttribute id="WEEK_ID"/>
+      <viewAttribute id="SHOP_ID"/>
+      <viewAttribute id="MARGIN"/>
+      <viewAttribute id="AMOUNT_SOLD"/>
+      <viewAttribute id="QUANTITY_SOLD"/>
+      <viewAttribute id="DATE_TIME"/>
+      <viewAttribute id="SALES_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="efashion.db.data::SHOP_FACTS"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="SHOP_FACTS_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SHOP_FACTS_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SHOP_FACTS_ID"/>
+    </attribute>
+    <attribute id="ARTICLE_ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARTICLE_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ARTICLE_ID"/>
+    </attribute>
+    <attribute id="COLOR_CODE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COLOR_CODE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COLOR_CODE"/>
+    </attribute>
+    <attribute id="WEEK_ID" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEEK_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WEEK_ID"/>
+    </attribute>
+    <attribute id="SHOP_ID" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SHOP_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SHOP_ID"/>
+    </attribute>
+    <attribute id="DATE_TIME" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE_TIME"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATE_TIME"/>
+    </attribute>
+    <attribute id="SALES_DATE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALES_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SALES_DATE"/>
+    </attribute>
+    <attribute id="ARTICLE_ID$local">
+      <descriptions defaultDescription="ARTICLE_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ARTICLE_ID"/>
+    </attribute>
+    <attribute id="WEEK_ID$local">
+      <descriptions defaultDescription="WEEK_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WEEK_ID"/>
+    </attribute>
+    <attribute id="SHOP_ID$local">
+      <descriptions defaultDescription="SHOP_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SHOP_ID"/>
+    </attribute>
+    <attribute id="SALES_DATE$local">
+      <keyMapping columnObjectName="Projection_1" columnName="SALES_DATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="MARGIN" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MARGIN"/>
+      <measureMapping columnObjectName="Projection_1" columnName="MARGIN"/>
+    </measure>
+    <measure id="AMOUNT_SOLD" order="7" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="AMOUNT_SOLD"/>
+      <measureMapping columnObjectName="Projection_1" columnName="AMOUNT_SOLD"/>
+    </measure>
+    <measure id="QUANTITY_SOLD" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="QUANTITY_SOLD"/>
+      <measureMapping columnObjectName="Projection_1" columnName="QUANTITY_SOLD"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+  <sharedDimensions>
+    <logicalJoin associatedObjectUri="efashion.db.modeling::dim_article">
+      <attributes>
+        <attributeRef>ARTICLE_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>ARTICLE_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_N" joinType="inner" joinOperator="Equal"/>
+      <temporalJoinProperties/>
+      <associatedAttributeFeatures>
+        <attributeReference alias="ARTICLE_ID_1" attributeName="ARTICLE_ID"/>
+      </associatedAttributeFeatures>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="efashion.db.modeling::dim_calendar">
+      <attributes>
+        <attributeRef>WEEK_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>WEEK_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_N" joinType="inner" joinOperator="Equal"/>
+      <temporalJoinProperties/>
+      <associatedAttributeFeatures>
+        <attributeReference alias="WEEK_ID_1" attributeName="WEEK_ID"/>
+      </associatedAttributeFeatures>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="efashion.db.modeling::dim_outlet">
+      <attributes>
+        <attributeRef>SHOP_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>SHOP_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_N" joinType="inner" joinOperator="Equal"/>
+      <temporalJoinProperties/>
+      <associatedAttributeFeatures>
+        <attributeReference alias="SHOP_ID_1" attributeName="SHOP_ID"/>
+      </associatedAttributeFeatures>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="efashion.db.modeling::dim_date">
+      <attributes>
+        <attributeRef>SALES_DATE$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>DATE_SQL</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_N" joinType="inner" joinOperator="Equal"/>
+      <temporalJoinProperties/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+  </sharedDimensions>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="30" y="332"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="StarJoinViewNodeInput" modelObjectType="repository">
+      <upperLeftCorner x="319" y="235"/>
+      <rectangleSize width="177.6845703125"/>
+    </shape>
+    <shape modelObjectName="efashion.db.modeling::dim_article" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="26" y="88"/>
+      <rectangleSize width="259.357421875"/>
+    </shape>
+    <shape modelObjectName="efashion.db.modeling::dim_calendar" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="555" y="24"/>
+      <rectangleSize width="273.361328125"/>
+    </shape>
+    <shape modelObjectName="efashion.db.modeling::dim_outlet" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="1220" y="30"/>
+      <rectangleSize width="256.662109375"/>
+    </shape>
+    <shape modelObjectName="efashion.db.modeling::dim_date" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="1520" y="30"/>
+      <rectangleSize width="248.67578125"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

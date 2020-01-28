@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="efashion.db.modeling::dim_calendar" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="dim_calendar"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="efashion.db.data::CALENDAR_YEAR_LOOKUP">
+    <resourceUri>efashion.db.data::CALENDAR_YEAR_LOOKUP</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<inlineHierarchy xsi:type="Dimension:LeveledHierarchy" id="week_hier" aggregateAllNodes="true" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+  <descriptions defaultDescription="week_hier"/>
+  <unassignedMemberProperties mode="FALSE"/>
+  <levels>
+    <level levelAttribute="YR" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="YR" sortDirection="ASC"/>
+    <level levelAttribute="QTR" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="QTR" sortDirection="ASC"/>
+    <level levelAttribute="MONTH_NAME" levelType="MDLEVEL_TYPE_TIME_MONTHS" order="3" orderAttribute="QTR" sortDirection="ASC"/>
+    <level levelAttribute="YEAR_WEEK" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="YEAR_WEEK" sortDirection="ASC"/>
+  </levels>
+</inlineHierarchy>
+<logicalModel id="efashion.db.data::CALENDAR_YEAR_LOOKUP">
+  <attributes>
+    <attribute id="WEEK_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEEK_ID"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="WEEK_ID"/>
+    </attribute>
+    <attribute id="WEEK_IN_YEAR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEEK_IN_YEAR"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="WEEK_IN_YEAR"/>
+    </attribute>
+    <attribute id="YR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YR"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="YR"/>
+    </attribute>
+    <attribute id="FISCAL_PERIOD" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FISCAL_PERIOD"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="FISCAL_PERIOD"/>
+    </attribute>
+    <attribute id="YEAR_WEEK" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR_WEEK"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="YEAR_WEEK"/>
+    </attribute>
+    <attribute id="QTR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QTR"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="QTR"/>
+    </attribute>
+    <attribute id="MONTH_NAME" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MONTH_NAME"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="MONTH_NAME"/>
+    </attribute>
+    <attribute id="MTH" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTH"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="MTH"/>
+    </attribute>
+    <attribute id="HOLIDAY_FLAG" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HOLIDAY_FLAG"/>
+      <keyMapping columnObjectName="CALENDAR_YEAR_LOOKUP" columnName="HOLIDAY_FLAG"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

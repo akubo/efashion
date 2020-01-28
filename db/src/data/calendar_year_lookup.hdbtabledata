@@ -1,0 +1,26 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "efashion.db.data::CALENDAR_YEAR_LOOKUP",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "efashion.db.data::calendar_year_lookup.csv",
+                "has_header": true
+            },
+            "import_settings": {
+				"import_columns": [
+					"WEEK_ID",
+					"WEEK_IN_YEAR",
+					"YR",
+					"FISCAL_PERIOD",
+					"YEAR_WEEK",
+					"QTR",
+					"MONTH_NAME",
+					"MTH",
+					"HOLIDAY_FLAG"
+                ]
+            }
+        }
+    ]
+}

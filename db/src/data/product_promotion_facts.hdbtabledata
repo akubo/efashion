@@ -1,0 +1,23 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "efashion.db.data::PRODUCT_PROMOTION_FACTS",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "efashion.db.data::product_promotion_facts.csv",
+                "has_header": true
+            },
+            "import_settings": {
+				"import_columns": [
+					"PRODUCT_PROMOTION_FACTS_ID",
+					"ARTICLE_ID",
+					"WEEK_ID",
+					"PROMOTION_ID",
+					"DURATION",
+					"PROMOTION_COST"
+                ]
+            }
+        }
+    ]
+}

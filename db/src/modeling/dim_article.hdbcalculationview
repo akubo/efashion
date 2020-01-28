@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="efashion.db.modeling::dim_article" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="dim_article"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="efashion.db.data::ARTICLE_LOOKUP">
+    <resourceUri>efashion.db.data::ARTICLE_LOOKUP</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<inlineHierarchy xsi:type="Dimension:LeveledHierarchy" id="LEVEL_1" aggregateAllNodes="true" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+  <descriptions defaultDescription=""/>
+  <unassignedMemberProperties mode="FALSE"/>
+  <levels>
+    <level levelAttribute="FAMILY_NAME" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="FAMILY_NAME" sortDirection="ASC"/>
+    <level levelAttribute="CATEGORY" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="CATEGORY" sortDirection="ASC"/>
+    <level levelAttribute="ARTICLE_LABEL" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="ARTICLE_LABEL" sortDirection="ASC"/>
+    <level levelAttribute="ARTICLE_ID" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="ARTICLE_LABEL" sortDirection="ASC"/>
+  </levels>
+</inlineHierarchy>
+<logicalModel id="efashion.db.data::ARTICLE_LOOKUP">
+  <attributes>
+    <attribute id="ARTICLE_ID" order="1" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="ARTICLE_LABEL">
+      <descriptions defaultDescription="ARTICLE_ID"/>
+      <keyMapping columnObjectName="ARTICLE_LOOKUP" columnName="ARTICLE_ID"/>
+    </attribute>
+    <attribute id="ARTICLE_LABEL" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARTICLE_LABEL"/>
+      <keyMapping columnObjectName="ARTICLE_LOOKUP" columnName="ARTICLE_LABEL"/>
+    </attribute>
+    <attribute id="CATEGORY" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEGORY"/>
+      <keyMapping columnObjectName="ARTICLE_LOOKUP" columnName="CATEGORY"/>
+    </attribute>
+    <attribute id="SALE_PRICE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALE_PRICE"/>
+      <keyMapping columnObjectName="ARTICLE_LOOKUP" columnName="SALE_PRICE"/>
+    </attribute>
+    <attribute id="FAMILY_NAME" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FAMILY_NAME"/>
+      <keyMapping columnObjectName="ARTICLE_LOOKUP" columnName="FAMILY_NAME"/>
+    </attribute>
+    <attribute id="FAMILY_CODE" order="6" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="FAMILY_NAME">
+      <descriptions defaultDescription="FAMILY_CODE"/>
+      <keyMapping columnObjectName="ARTICLE_LOOKUP" columnName="FAMILY_CODE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

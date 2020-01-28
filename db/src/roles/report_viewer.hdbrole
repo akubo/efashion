@@ -1,0 +1,9 @@
+{
+	"role":{
+		"name": "efashion.db.roles::report_viewer",
+		"schema_privileges": [{
+			
+		   "privileges": ["SELECT", "SELECT METADATA" ]
+		}]
+	}
+}

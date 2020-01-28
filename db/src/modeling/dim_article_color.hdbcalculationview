@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="efashion.db.modeling::dim_article_color" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" runWithInvokerPrivileges="true">
+<descriptions defaultDescription="dim_article_color"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="efashion.db.data::ARTICLE_COLOR_LOOKUP">
+    <resourceUri>efashion.db.data::ARTICLE_COLOR_LOOKUP</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="efashion.db.data::ARTICLE_COLOR_LOOKUP">
+  <attributes>
+    <attribute id="ARTICLE_COLOR_LOOKUP_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARTICLE_COLOR_LOOKUP_ID"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="ARTICLE_COLOR_LOOKUP_ID"/>
+    </attribute>
+    <attribute id="ARTICLE_ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARTICLE_ID"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="ARTICLE_ID"/>
+    </attribute>
+    <attribute id="COLOR_CODE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COLOR_CODE"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="COLOR_CODE"/>
+    </attribute>
+    <attribute id="ARTICLE_LABEL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARTICLE_LABEL"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="ARTICLE_LABEL"/>
+    </attribute>
+    <attribute id="COLOR_LABEL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COLOR_LABEL"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="COLOR_LABEL"/>
+    </attribute>
+    <attribute id="CATEGORY" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEGORY"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="CATEGORY"/>
+    </attribute>
+    <attribute id="SALE_PRICE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALE_PRICE"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="SALE_PRICE"/>
+    </attribute>
+    <attribute id="FAMILY_NAME" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FAMILY_NAME"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="FAMILY_NAME"/>
+    </attribute>
+    <attribute id="FAMILY_CODE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FAMILY_CODE"/>
+      <keyMapping columnObjectName="ARTICLE_COLOR_LOOKUP" columnName="FAMILY_CODE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

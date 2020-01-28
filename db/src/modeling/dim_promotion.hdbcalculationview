@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="efashion.db.modeling::dim_promotion" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="_"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="efashion.db.data::PROMOTION_LOOKUP">
+    <resourceUri>efashion.db.data::PROMOTION_LOOKUP</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="efashion.db.data::PROMOTION_LOOKUP">
+  <attributes>
+    <attribute id="PROMOTION_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROMOTION_ID"/>
+      <keyMapping columnObjectName="PROMOTION_LOOKUP" columnName="PROMOTION_ID"/>
+    </attribute>
+    <attribute id="PROMOTION_FLAG" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROMOTION_FLAG"/>
+      <keyMapping columnObjectName="PROMOTION_LOOKUP" columnName="PROMOTION_FLAG"/>
+    </attribute>
+    <attribute id="PRINT_FLAG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRINT_FLAG"/>
+      <keyMapping columnObjectName="PROMOTION_LOOKUP" columnName="PRINT_FLAG"/>
+    </attribute>
+    <attribute id="RADIO_FLAG" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RADIO_FLAG"/>
+      <keyMapping columnObjectName="PROMOTION_LOOKUP" columnName="RADIO_FLAG"/>
+    </attribute>
+    <attribute id="TELEVISION_FLAG" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELEVISION_FLAG"/>
+      <keyMapping columnObjectName="PROMOTION_LOOKUP" columnName="TELEVISION_FLAG"/>
+    </attribute>
+    <attribute id="DIRECT_MAIL_FLAG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DIRECT_MAIL_FLAG"/>
+      <keyMapping columnObjectName="PROMOTION_LOOKUP" columnName="DIRECT_MAIL_FLAG"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

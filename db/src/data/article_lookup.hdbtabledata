@@ -1,0 +1,23 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "efashion.db.data::ARTICLE_LOOKUP",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "efashion.db.data::article_lookup.csv",
+                "has_header": true
+            },
+            "import_settings": {
+				"import_columns": [
+				"ARTICLE_ID",
+				"ARTICLE_LABEL",
+				"CATEGORY",
+				"SALE_PRICE",
+				"FAMILY_NAME",
+				"FAMILY_CODE"
+                ]
+            }
+        }
+    ]
+}
